@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import defaultImage from '../public/default_room.png';
+import defaultImage from './default_room.png';
 import BookButton from './BookButton';
 
 const MeetingRoom = ({ room }) => {
