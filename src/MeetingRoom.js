@@ -1,4 +1,4 @@
-import defaultImage from '../public/default_room.png';
+import defaultImage from './default_room.png';
 
 function MeetingRoom({ room }) {
 
