@@ -1,4 +1,4 @@
-function BookButton({ bookable, bookRoom }) {
+const BookButton = ({ bookable, bookRoom }) => {
   return(
     <button
       disabled={!bookable}

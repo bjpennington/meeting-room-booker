@@ -1,4 +1,5 @@
-import { render } from '@testing-library/react';
+import { render, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import MeetingRoom from './MeetingRoom';
 import logoThumbnail from '../public/logo512.png';
 
@@ -38,4 +39,15 @@ test('it displays default image if no thumbnail included', () => {
   expect(getByAltText('generic meeting room')).toBeInTheDocument();
   const thumbnail = getByRole('img');
   expect(thumbnail).toHaveAttribute('src', 'default_room.png');
+});
+
+test('book button is present', () => {
+  const { getByRole } = render(<MeetingRoom room={sampleRoom} />);
+  expect(getByRole('button')).toBeInTheDocument();
+});
+
+test('clicking book button books room and updates available slots', async() => {
+  const { getByRole, getByText } = render(<MeetingRoom room={sampleRoom} />);
+  userEvent.click(getByRole('button'));
+  await waitFor(() => expect(getByText('7 spots remaining')).toBeInTheDocument());
 });
