@@ -1,14 +1,13 @@
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import App from './App';
 
-test('renders title', () => {
-  render(<App />);
-  const title = screen.getByText('Rooms');
-  expect(title).toBeInTheDocument();
+test('it renders title', () => {
+  const { getByText} = render(<App />);
+  expect(getByText('Rooms')).toBeInTheDocument();
 });
 
-test('renders intro text', () => {
-  render (<App />);
-  const introText = screen.getByText('The number of available slots are shown for each room. Click "book" to book a room immediately.');
-  expect(introText).toBeInTheDocument();
+test('it renders intro text', () => {
+  const { getByText } = render (<App />);
+  const introText = 'The number of available slots are shown for each room. Click "book" to book a room immediately.';
+  expect(getByText(introText)).toBeInTheDocument();
 })
