@@ -46,7 +46,7 @@ const MeetingRoom = ({ room }) => {
   };
 
   return(
-    <>
+    <li>
       <h2>
         {room.name ? room.name : 'Name Missing'}
       </h2>
@@ -59,7 +59,7 @@ const MeetingRoom = ({ room }) => {
         bookable={spots && spots > 0}
         bookRoom={bookRoom}
       />
-    </>
+    </li>
   )
 };
 

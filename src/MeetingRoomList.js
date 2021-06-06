@@ -1,14 +1,23 @@
-import MeetingRoom from './MeetingRoom'
+import './MeetingRoomList.css';
+import MeetingRoom from './MeetingRoom';
 
 function MeetingRoomList({ rooms }) {
-  if(!rooms || rooms.length === 0) {
-    return(<p>No rooms available. Please try again later.</p>)
+  const renderMeetingRooms = () => {
+    if(!rooms || rooms.length === 0) {
+      return(<p>No rooms available. Please try again later.</p>);
+    }
+    return(
+      rooms.map((room, i) => {
+        return <MeetingRoom key={i} room={room} />
+      })
+    );
   }
-  return(
-    rooms.map((room, i) => {
-      return <MeetingRoom key={i} room={room} />
-    })
-  )
+
+  return (
+    <ul>
+      {renderMeetingRooms()};
+    </ul>
+  );
 };
 
 export default MeetingRoomList;
