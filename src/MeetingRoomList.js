@@ -14,8 +14,8 @@ function MeetingRoomList({ rooms }) {
   }
 
   return (
-    <ul>
-      {renderMeetingRooms()};
+    <ul className="room_list">
+      {renderMeetingRooms()}
     </ul>
   );
 };

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import swal from 'sweetalert';
 import defaultImage from './default_room.png';
+import './MeetingRoom.css';
 import BookButton from './BookButton';
 import axios from 'axios';
 
@@ -46,15 +47,19 @@ const MeetingRoom = ({ room }) => {
   };
 
   return(
-    <li>
-      <h2>
+    <li className="room">
+      <h2 className="room_name">
         {room.name ? room.name : 'Name Missing'}
       </h2>
-      <img
-        alt={room.name ? `${room.name} meeting room` : 'generic meeting room'}
-        src={room.thumbnail ? room.thumbnail : defaultImage }
-      />
-      <p>{spotsAvailable(spots)}</p>
+      <div className="thumbnail_wrapper">
+        <img
+          alt={room.name ? `${room.name} meeting room` : 'generic meeting room'}
+          src={room.thumbnail ? room.thumbnail : defaultImage }
+        />
+      </div>
+      <p className="spots_detail">
+        {spotsAvailable(spots)}
+      </p>
       <BookButton
         bookable={spots && spots > 0}
         bookRoom={bookRoom}

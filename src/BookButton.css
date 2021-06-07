@@ -1,0 +1,21 @@
+.book_button {
+  width: 90px;
+  height: 29px;
+  background: #9F0086;
+  color: #ffffff;
+  border-radius: 4px;
+  border: none;
+  position: absolute;
+  right: 0;
+  bottom: 26px;
+  font-size: 12px;
+  line-height: 24px;
+}
+
+.book_button:hover {
+  opacity: 60%;
+}
+
+.book_button:disabled {
+  opacity: 50%;
+}

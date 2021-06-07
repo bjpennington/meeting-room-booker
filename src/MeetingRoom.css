@@ -1,0 +1,38 @@
+.room {
+  margin-right: 20px;
+  margin-bottom: 65px;
+  display: flex;
+  flex-flow: column;
+  position: relative
+}
+
+.room_name {
+  margin: 10px 0px;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+  color: #222222;
+}
+
+.thumbnail_wrapper {
+  max-width: 328px;
+  max-height: 220px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 11px;
+  order: -1;
+}
+
+.thumbnail_wrapper > img {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.spots_detail {
+  margin: 0;
+  color: #9F0086;
+  font-size: 18px;
+  line-height: 24px;
+}

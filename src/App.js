@@ -29,8 +29,12 @@ const App = () => {
 
   return (
     <>
-      <h1>Rooms</h1>
-      <p>The number of available slots are shown for each room. Click "book" to book a room immediately.</p>
+      <h1 className="page_title">
+        Rooms
+      </h1>
+      <p className="page_intro">
+        The number of available slots are shown for each room. Click "book" to book a room immediately.
+      </p>
       { loadError ? loadErrorMessage() : <MeetingRoomList rooms={rooms} /> }
     </>
   );
